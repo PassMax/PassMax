@@ -57,9 +57,14 @@ cd src
 python main.py
 ```
 
-And enjoy!!!!
-
 ## MacOS
+
+The easiest way to install is to use the install script.
+
+```sh
+curl -sL https://raw.githubusercontent.com/micziz/PassMax/master/install.sh | sh
+```
+
 
 ### Get the source code
 
@@ -140,6 +145,12 @@ cd PassMax && cd src && python3 main.py
 
 ## Linux
 
+The easiest way to install is to use the install script.
+
+```sh
+curl -sL https://raw.githubusercontent.com/micziz/PassMax/master/install.sh | sh
+```
+
 ### Get the source code
 
 First of all, we gotta get the source code.
@@ -150,13 +161,15 @@ Install git by:
 
 - Using a package manager
 
+(Git may be preinstalled depending on your distribution)
+
 Then, clone the repository:
 
 ```
 git clone https://github.com/micziz/PassMax.git
 ```
 
-Using the zip file
+**Using the zip file**
 
 Go to
 
@@ -170,7 +183,13 @@ Latest: Click code, and download the zip.
 
 ### Download python
 
+- Using a package manager
+
+(Python may be preinstalled depending on your distribution)
+
 Check your package manager and get the latest version.
+
+(PS, you can also compile it from source, would not recommend that)
 
 ### Install requirements
 
@@ -200,5 +219,3 @@ Or as a one-liner:
 ```
 cd PassMax && cd src && python main.py
 ```
-
-Enjoy
