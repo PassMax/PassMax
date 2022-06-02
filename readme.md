@@ -47,7 +47,7 @@ The full changelog can be found at [changelog.md](changelog.md)
 
 ## License 👨‍⚖️
 
-PassMax is licensed under the Apache 2.0. The packages used in this project are licensed under other licenses. Please refer to [COPYING](COPYING) for more info.
+PassMax is licensed under the Apache 2.0. The packages used in this project are licensed under other licenses. Please refer to [COPYING](COPYING.md) for more info.
 
 ## Code Of Conduct 🤝
 
