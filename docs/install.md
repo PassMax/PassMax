@@ -14,6 +14,8 @@ Clone the repository:
 git clone https://github.com/micziz/PassMax.git
 ```
 
+**THE GIT REPO MAY HAVE SOME DANGLING AND NOT WORKING COMMITS!!! NOT RESPONSIBLE FOR PASSWORD LOSS/ROB**
+
 **Using the zip file**
 
 You can chose between:
@@ -22,7 +24,6 @@ You can chose between:
 
 **Latest**: Click code, and download the zip. (This may not work do to dangling commits)
 
-**THE GIT REPO MAY HAVE SOME DANGLING AND NOT WORKING COMMITS!!! NOT RESPONSIBLE FOR PASSWORD LOSS/ROB**
 
 ### Download python
 
