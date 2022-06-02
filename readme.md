@@ -16,19 +16,26 @@
 
 ### What is PassMax? ❓
 
-PassMax is a **Secure** and **Local** password manager. It's built using python, and designed to be fast.
+PassMax is a Local password manager. It's built using python, and designed to be fast.
 
 ### Why should I use PassMax, and not something like 1Password? 🙋
 
-PassMax is completely local. This means that unless a hacker has access to you computer (or you give away your pass.txt) your passwords are secure. (There also encrypted!) While with some effort you can run it on a database, the stock experience does not include it. 
+PassMax is designed to be minimal. It's not deseigned to be **User-Friendly**, but **User-Centric**. You want to encrypt it. Go for it! Want to add a Database? Go for it.
 
 ## Installation 💿
 
-Currently, PassMax can only be installed from source. It's not hard! You can find install instructions in the wiki.
+The Best and easiest way to install PassMax is to use the install script.
 
+```sh
+curl -sL https://raw.githubusercontent.com/passmax/passmax/master/install.sh | sh
+```
+
+On windows, there is no install script. You will need to compile the source code yourself.
 ## Documentation 📖
 
-Currently, the documentation is only offline. You can find it in the [docs directory](/docs/)
+Documentation is provided by github and can be found in the wiki.
+
+You can find the offline documentation in the [docs directory](docs/). 
 
 ## Contributing 😎
 
@@ -40,9 +47,7 @@ The full changelog can be found at [changelog.md](changelog.md)
 
 ## License 👨‍⚖️
 
-PassMax is licensed under the Apache 2.0
-
-Refer to [LICENSE](LICENSE) for more info.
+PassMax is licensed under the Apache 2.0. The packages used in this project are licensed under other licenses. Please refer to [COPYING](COPYING) for more info.
 
 ## Code Of Conduct 🤝
 
