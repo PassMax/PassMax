@@ -1,6 +1,6 @@
 # PassMax
 # 
-# PassMax is a Secure and Local password manager built with python, and designed to be fast.
+# PassMax is a minimal password manager built with python, and designed fast and buildable upon.
 # PassMax is open source. Source code is available at https://www.github.com/micziz/PassMax.
 # Thanks for using PassMax!
 # License: Apache 2.0
@@ -10,11 +10,12 @@
 
 
 # Import standard modules
-import time, base64, os, sys
+import time, base64, sys
 
 
 # Other file imports
 from utils.PasswordGenerator import PasswordGenerator # Password generator 
+from utils.clearTerminal import clear_terminal # To clear the terminal
 
 
 from pyfiglet import Figlet # Pyfiglet
@@ -52,19 +53,6 @@ command_list = "\n".join([
                 "", # Blank line after command list
             ])
 
-# Check what platform the user is using
-# And declere the correct clear command
-def clear_terminal() -> None:
-  if sys.stdout.isatty(): # if in a terminal
-    if sys.platform.startswith("win"):
-      # For windows, use cls
-      os.system("cls")
-    else:
-      # For MacOS / Linux, this should clear the terminal
-      sys.stdout.write("\033[2J\033[1;1H")
-  # Do nothing if not a terminal
-  return
-
 def startup():
     global passwords
     print("Loading...")
@@ -85,8 +73,8 @@ def startup():
         passwords.append(final)
         # Close file
         ff.close()
-        # Sleep for 2 seconds
-        time.sleep(2)
+        # Sleep for 1 seconds
+        time.sleep(1)
     # If file does not exist:
     except FileNotFoundError:
         # Print error
@@ -101,8 +89,8 @@ def startup():
         ff = open(filename, "rt")
         # Add passwords to list
         passwords = ff.readlines()
-        # Sleep for 2 seconds
-        time.sleep(2)
+        # Sleep for 1 seconds
+        time.sleep(1)
 
     # Try to read the master password file
 try:
@@ -513,16 +501,15 @@ def commands():
 
 
 def main():
+    # Ask user what they want to do
+    printCL = True
     # While loop to keep program running
     while True:
-        # Clear screen
-        clear_terminal()
-        # Welcome user
-        print("Welcome to PassMax!")
-        # Ask user what they want to do
         print("What do you want to do today?")
-        # List options
-        print(command_list)
+        # Welcome user
+        if printCL == True:
+            # List options
+            print(command_list)
         # A dictionary to store the options
         options = {
             "C" : createPassword,
@@ -542,7 +529,11 @@ def main():
                 # 2. Be callable, print when called!
         }
         # Get user input
-        userChoice = input("Enter your choice: ")
+        try:
+            userChoice = input("Enter your choice: ")
+        except:
+            print("\nQuitting, goodbye!")
+            sys.exit()
 
         try:
             options[userChoice]() 
@@ -551,6 +542,7 @@ def main():
         except KeyError:
             print('Invalid Command')
             time.sleep(2)
+            printCL = False
             pass # Do nothing if input is not in command list,
                  # Since this is in a loop, it will ask for input again above
 
