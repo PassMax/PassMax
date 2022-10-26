@@ -12,8 +12,11 @@
 # Import standard modules
 import time, base64, os, sys
 
-# Import non standard modules
-from password_generator import PasswordGenerator # Password generator 
+
+# Other file imports
+from utils.PasswordGenerator import PasswordGenerator # Password generator 
+
+
 from pyfiglet import Figlet # Pyfiglet
 
 # Actual start of the program
@@ -121,7 +124,7 @@ f = Figlet(font="slant")
 # Declare version
 version = "0.2.2"
 # Start the password generator
-pwo = PasswordGenerator()
+pwo = PasswordGenerator
 # Filename to store passwords
 filename = "pass.txt"
 # List of passwords
@@ -195,10 +198,8 @@ def createPassword():
         # Get length of password
         lengthOfPassword = int(input("Enter the length of the password: "))
         # Set the length of the password in the password generator
-        pwo.minlen = lengthOfPassword
-        pwo.maxlen = lengthOfPassword
         # Generate password
-        newPassword = pwo.generate()
+        newPassword = pwo.generateWithLen(lengthOfPassword)
         # Tell user password is being saved
         print("\nPassword created, saving...")
         # Sleep for 2 seconds
