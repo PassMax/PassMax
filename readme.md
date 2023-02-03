@@ -1,3 +1,5 @@
+> Passmax is deprecated. Please do not use it and do not make me suffer...
+
 # PassMax! 🔑
 
 - [PassMax! 🔑](#passmax-)
